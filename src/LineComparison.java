@@ -1,12 +1,11 @@
 import java.util.Scanner;
 
-
 public class LineComparison {
     static Scanner sc = new Scanner(System.in);
     static float lengthLine_X = 0;
     static float lengthLine_Y = 0;
 
-    static void compare() {
+    void compareTo() {
 
         if (lengthLine_Y > lengthLine_X) {
             System.out.println("Line 2 is greater than Line 1");
@@ -15,7 +14,7 @@ public class LineComparison {
         }
     }
 
-    static void equals() {
+    void equalsTo() {
         System.out.println("Enter the value of x4: ");
         float x4 = sc.nextFloat();
         System.out.println("Enter the value of x3: ");
@@ -36,6 +35,8 @@ public class LineComparison {
 
     public static void main(String[] args) {
 
+        LineComparison lc = new LineComparison();
+
         System.out.println("Enter the value of x1: ");
         double x1 = sc.nextDouble();
         System.out.println("Enter the value of x2: ");
@@ -49,8 +50,7 @@ public class LineComparison {
         lengthLine_X = (float) Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         System.out.println("Length of line 1 is: " + lengthLine_X);
 
-        equals();
-        compare();
+        lc.equalsTo();
+        lc.compareTo();
 
-    }
-}
+    }}
