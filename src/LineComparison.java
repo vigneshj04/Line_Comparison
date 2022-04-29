@@ -3,20 +3,29 @@ import java.util.Scanner;
 
 public class LineComparison {
     static Scanner sc = new Scanner(System.in);
-    static double lengthLine_X = 0;
-    static double lengthLine_Y = 0;
+    static float lengthLine_X = 0;
+    static float lengthLine_Y = 0;
+
+    static void compare() {
+
+        if (lengthLine_Y > lengthLine_X) {
+            System.out.println("Line 2 is greater than Line 1");
+        } else {
+            System.out.println("Line 2 is smaller than Line 1");
+        }
+    }
 
     static void equals() {
         System.out.println("Enter the value of x4: ");
-        double x4 = sc.nextDouble();
+        float x4 = sc.nextFloat();
         System.out.println("Enter the value of x3: ");
-        double x3 = sc.nextDouble();
+        float x3 = sc.nextFloat();
         System.out.println("Enter the value of y4: ");
-        double y4 = sc.nextDouble();
+        float y4 = sc.nextFloat();
         System.out.println("Enter the value of y3: ");
-        double y3 = sc.nextDouble();
-        lengthLine_Y = Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
-        System.out.println("Length of line is: " + lengthLine_Y);
+        float y3 = sc.nextFloat();
+        lengthLine_Y = (float) Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
+        System.out.println("Length of line 2 is: " + lengthLine_Y);
 
         if (lengthLine_Y == lengthLine_X) {
             System.out.println("Two lines are equal");
@@ -37,10 +46,11 @@ public class LineComparison {
         System.out.println("Enter the value of y2: ");
         double y2 = sc.nextDouble();
 
-        lengthLine_X = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-        System.out.println("Length of line is: " + lengthLine_X);
+        lengthLine_X = (float) Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        System.out.println("Length of line 1 is: " + lengthLine_X);
 
         equals();
+        compare();
 
     }
 }
